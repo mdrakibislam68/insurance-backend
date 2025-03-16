@@ -1,0 +1,62 @@
+{% extends "base/base.html" %}
+{% block content %}
+<table cellpadding="0" cellspacing="0" border="0" class="et-table-main-body">
+  <tr>
+    <td>
+      <div style="margin: 0 auto 30px; border-bottom: 1px solid #eee; padding-bottom: 20px;">
+        <table style="width: 100%;">
+            <tr>
+              <td><img src="https://insuranceschooloftexas.staging.tempurl.host/wp-content/uploads/2024/03/Rooftop-Saunas-Logo-hashtag-and-handle-978x978-1-150x150.jpg" style="height: 50px; width: auto;"></td>
+              <td style="text-align: right;">
+                <p style="margin: 0; color: #7b7b7b;">Questions? Try our › <a href="https://insuranceschooloftexas.com/hackney/faqs/" target="_blank" rel="noopener" style="text-decoration: underline;">FAQs</a></p>
+                <p style="margin: 0; color: #7b7b7b;">Speedy support › <a href="https://wa.me/447769465044" target="_blank" rel="noopener" style="text-decoration: underline;">WhatsApp (07769465044)</a></p>
+              </td>
+            </tr>
+        </table>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div style="font-size: 16px; line-height: 1.5;">
+        <div style="font-size: 16px; margin-bottom: 20px; line-height: 1.6;">
+          Hi {{customer_name}},<br><br>Your <strong>{{service_name}}</strong> booking at <strong>{{location_name}}</strong> is only <strong>{{remaining_hours}}!</strong>.
+        </div>
+      <h2 style="margin: 0; font-size: 16px; font-weight: bold;">Booking details:</h2>
+        <ul style="padding-left: 20px; margin: 0;">
+          <li style="margin-bottom: 5px;">Date: <strong>{{booking_date}}</strong></li>
+          <li style="margin-bottom: 5px;">Start - End time: <strong>{{start_time}} - {{end_time}}</strong></li>
+          <li style="margin-bottom: 5px;">Session: <strong>{{service_name}}</strong></li>
+          <li style="margin-bottom: 5px;">People in your group: <strong>{{total_attendees}}</strong></li>
+          <li style="margin-bottom: 5px;">Your booking note: <strong>{{customer_note}}</strong></li>
+        </ul>
+          <div style="font-size: 16px; margin-bottom: 12px; line-height: 1.6;">
+            <h2 style="margin: 0; font-size: 16px; font-weight: bold;">Address:</h2>
+            <div>{{location_detail}}</div>
+          </div>
+
+          <h2 style="margin: 0; font-size: 16px; font-weight: bold;">To enter:</h2>
+        <div style="font-size: 14px; margin-bottom: 20px; line-height: 1.6;">
+          <div style="margin-bottom: 5px;">① Use the 'Netil Corner' entrance on Bocking Street (just off Mare Street)</div>
+          <div style="margin-bottom: 5px;">② Press 'Directory' then 'Saunas' on the door buzzer to be buzzed in.</div>
+          <div style="margin-bottom: 5px;">③ Head up the stairs, following the Insurace School of Texas logos/arrows all the way up to the top.</div>
+        </div>
+      <div style="font-size: 16px; margin-bottom: 20px; line-height: 1.6;">
+        <div style="margin-bottom: 10px;"><strong>*</strong> Don't hesitate to call us (<a href="tel:%20447769465044" target="_blank" rel="noopener" style="text-decoration: underline;"><b>07769465044</b></a>) or <a href="https://wa.me/447769465044" style="text-decoration: underline;"><strong>WhatsApp us</strong></a> if you can't find us right away.</div>
+        <div><strong>**</strong> Note that 'Netil Corner' has a separate entrance to 'Netil House'</div>
+      </div>
+
+          <h2 style="margin: 0; font-size: 16px; font-weight: bold;">Key information:</h2>
+        <ul style="padding-left: 20px; margin: 0;">
+          <li style="margin-bottom: 5px;"><strong>Late arrival</strong> will eat into your session duration</li>
+          <li style="margin-bottom: 5px;"><strong>Missed bookings</strong> will not be refunded</li>
+          <li style="margin-bottom: 5px;">We have a strict <strong>over 18s</strong> policy (ID may be required on entry)</li>
+          <li style="margin-bottom: 5px;">Insurace School of Texas Hackney is currently <strong>only accessible by foot</strong> due to structural restrictions of the building</li>
+          <li style="margin-bottom: 5px;">Please <strong>bring your own towel(s)</strong>, as these are not provided</li>
+        </ul>
+
+    </div>
+    </td>
+  </tr>
+</table>
+{% endblock %}

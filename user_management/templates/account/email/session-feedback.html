@@ -1,0 +1,46 @@
+{% extends "base/base.html" %}
+{% block content %}
+    <table cellpadding="0" cellspacing="0" border="0" class="et-table-main-body">
+        <tr>
+            <td>
+                 <div style="margin: 0 auto 30px; border-bottom: 1px solid #eee; padding-bottom: 20px;">
+                    <table style="width: 100%;">
+                        <tr>
+                            <td><img src="https://insuranceschooloftexas.staging.tempurl.host/wp-content/uploads/2024/03/Rooftop-Saunas-Logo-hashtag-and-handle-978x978-1-150x150.jpg" style="height: 50px; width: auto;"></td>
+                            <td style="text-align: right;">
+                                <p style="margin: 0; color: #7b7b7b;">Questions? Try our › <a href="https://insuranceschooloftexas.com/hackney/faqs/" target="_blank" rel="noopener" style="text-decoration: underline;">FAQs</a></p>
+                                <p style="margin: 0; color: #7b7b7b;">Speedy support › <a href="https://wa.me/447769465044" target="_blank" rel="noopener" style="text-decoration: underline;">WhatsApp (07769465044)</a></p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div style="font-size: 16px; line-height: 1.5;">
+                    <div style="font-size: 16px; margin-bottom: 20px; line-height: 1.6;">
+                        Hi {{customer_name}},<br><br>We hope that you enjoyed your {{service_name}} session at {{agent_name}}.
+                    </div>
+                    <div>
+                        If you have a moment, we would really appreciate you sharing your experience by leaving us a review:
+                    </div>
+                </div>
+            </td>
+        </tr>
+         <tr>
+             <td>
+                <div style="margin-top: 25px;">
+                    <a href="{{ rating_url }}" style="text-decoration: none; padding: 10px; border-radius: 6px; text-align: center; font-size: 18px; color: #ffffff; background-color: #2652e4; font-weight: bold;">Rate {{service_name}}</a>
+                </div>
+            </td>
+        </tr>
+<!--         <tr>-->
+<!--             <td>-->
+<!--                 <div style="margin-top: 25px;">-->
+<!--                     The team at Insurace School of Texas-->
+<!--                 </div>-->
+<!--             </td>-->
+<!--         </tr>-->
+    </table>
+{% endblock %}

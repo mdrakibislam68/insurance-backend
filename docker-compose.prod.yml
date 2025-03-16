@@ -1,0 +1,66 @@
+services:
+  redis:
+    image: redis:alpine
+
+  django_wsgi:
+    container_name: django_wsgi
+    volumes:
+      - static:/static
+      - .:/code
+    env_file: prod.env
+    build:
+      context: ./
+      dockerfile: ./prod.Dockerfile
+    ports:
+      - "8000:8000"
+
+  nginx:
+    build: ./nginx
+    volumes:
+      - static:/static
+    ports:
+      - "80:80"
+    depends_on:
+      - django_wsgi
+
+  celery:
+    container_name: django_celery
+    restart: always
+    build:
+      context: ./
+      dockerfile: ./celery.prod.Dockerfile
+    command: celery -A backend worker -l info
+    volumes:
+      - ./:/code
+    env_file: prod.env
+    depends_on:
+      - redis
+
+  flower:
+    container_name: celery_flower
+    image: mher/flower:0.9.7
+    volumes:
+      - ./flower-static:/usr/local/lib/python3.x/site-packages/flower/static
+    command: [ 'flower', '--broker=redis://redis:6379', '--port=5555', '--url_prefix=/flower' ]
+    ports:
+      - 5557:5555
+    depends_on:
+      - redis
+
+#  beat:
+#    restart: always
+#    build:
+#      context: ./
+#      dockerfile: ./celery.prod.Dockerfile
+#    command: celery -A backend beat -l info
+#    volumes:
+#      - ./:/code
+#    env_file: prod.env
+#    depends_on:
+#      - celery
+
+volumes:
+  static:
+  flower-static:
+
+

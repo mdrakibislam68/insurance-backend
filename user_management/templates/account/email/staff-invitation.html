@@ -1,0 +1,75 @@
+{% extends "base/base.html" %}
+{% block content %}
+
+    <table cellpadding="0" cellspacing="0" border="0" class="et-table-main-body">
+        <tr>
+            <td>
+                <h2 style="margin-bottom: 30px; font-weight: 500; font-size: 30px; line-height: 41px; text-align: center; ">
+                    Welcome to Insurace School of Texas!
+                </h2>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p style="margin-bottom: 10px; font-size: 16px; line-height: 24px;">
+                    Dear {{ recipient_name }},
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+
+                <p style="margin-bottom: 20px;">
+                    We’re thrilled to welcome you to <strong>Insurace School of Texas</strong> as a valued team member!
+                    Your expertise and skills make you a great fit, and we’re excited about the contributions you’ll bring to our journey.
+                </p>
+
+                <p>
+                    <strong>Your Account Details:</strong>
+                </p>
+                <ul>
+                    <li><strong>Email:</strong> {{ email }}</li>
+                    <li><strong>Temporary Password:</strong> {{ password }}</li>
+                </ul>
+
+                <p style="margin-top: 20px;">
+                    <strong>Getting Started:</strong>
+                </p>
+                <ol>
+                    <li><strong>Log In:</strong> Visit our website at <a href="{{ signin_url }}">{{ signin_url }}</a> and click "Sign In".</li>
+                    <li><strong>Change Your Password:</strong> Use the temporary password to log in and reset your password for added security.</li>
+                    <li><strong>Complete Your Profile:</strong> Once logged in, update your profile with any additional details.</li>
+                </ol>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Need Help?</strong>
+                <p style="margin-top: 20px;">
+                    If you experience any issues or have questions, our support team is here to help:
+                </p>
+                <ul>
+                    <li><strong>Email:</strong> <a href="mailto:hi@insuranceschooloftexas.com">hi@insuranceschooloftexas.com</a></li>
+                    <li><strong>Phone:</strong> +44 7769 465044</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p style="margin-top: 20px; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid #E8EDF3;">
+                   We are committed to making your onboarding process as smooth as possible. Once again, welcome to Insurace School of Texas!
+                   We’re excited to have you on board and look forward to achieving great success together.
+                </p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <p style="margin-bottom: 0; font-size: 12px; line-height: 16px;">
+                    Best Regards,
+                </p>
+                <p>Support Team | <a href="https://insuranceschooloftexas.com/">insuranceschooloftexas.com</a></p>
+            </td>
+        </tr>
+    </table>
+{% endblock %}

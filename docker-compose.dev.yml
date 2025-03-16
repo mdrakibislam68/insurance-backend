@@ -1,0 +1,55 @@
+services:
+  pg_db:
+    image: postgres:16-alpine
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+    env_file: prod.env
+
+  redis:
+    image: redis:alpine
+
+  django_wsgi:
+    container_name: django_wsgi
+    pull_policy: always
+    volumes:
+      - static:/static
+    env_file: prod.env
+    build:
+      context: ./
+      dockerfile: ./prod.Dockerfile
+    depends_on:
+      - pg_db
+
+  nginx:
+    build: ./nginx_staging
+    volumes:
+      - static:/static
+    depends_on:
+      - django_wsgi
+
+  celery:
+    container_name: django_celery
+    pull_policy: always
+    restart: always
+    build:
+      context: ./
+      dockerfile: ./celery.prod.Dockerfile
+    command: celery -A backend worker -l info
+    env_file: prod.env
+    depends_on:
+      - redis
+      - pg_db
+
+  flower:
+    container_name: celery_flower
+    image: mher/flower:0.9.7
+    volumes:
+      - ./flower-static:/usr/local/lib/python3.x/site-packages/flower/static
+    command: [ 'flower', '--broker=redis://redis:6379', '--port=5555', '--url_prefix=/flower' ]
+    depends_on:
+      - redis
+
+volumes:
+  static:
+  postgres-data:
+  flower-static:

@@ -1,0 +1,56 @@
+{% extends "base/base.html" %}
+{% block content %}
+    <table cellpadding="0" cellspacing="0" border="0" class="et-table-main-body">
+        <tr>
+            <td>
+                 <div style="margin: 0 auto 30px; border-bottom: 1px solid #eee; padding-bottom: 20px;">
+                    <table style="width: 100%;">
+                        <tr>
+                            <td><img src="https://insuranceschooloftexas.staging.tempurl.host/wp-content/uploads/2024/03/Rooftop-Saunas-Logo-hashtag-and-handle-978x978-1-150x150.jpg" style="height: 50px; width: auto;"></td>
+                            <td style="text-align: right;">
+                                <p style="margin: 0; color: #7b7b7b;">Booking ID</p>
+                                <p style="margin: 0; color: #000000;">{{booking_id}}</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div style="font-size: 16px; line-height: 1.5;">
+                    <div style="font-size: 16px; margin-bottom: 20px; line-height: 1.6;">
+                        Hi {{agent_name}},<br><br>You have received a new booking from {{customer_name}}.
+                    </div>
+                    <h2 style="margin: 0; font-size: 16px; font-weight: bold;">Customer Info</h2>
+                    <ul style="padding-left: 20px; margin: 0;">
+                      <li style="margin-bottom: 5px;">Full Name: <strong>{{customer_name}}</strong></li>
+                      <li style="margin-bottom: 5px;">Email Address: <strong>{{customer_email}}</strong></li>
+                      <li style="margin-bottom: 5px;">Phone: <strong>{{customer_phone}}</strong></li>
+                      <li style="margin-bottom: 5px;">Comments: <strong>{{customer_comments}}</strong></li>
+                    </ul>
+                    <h2 style="margin: 0; font-size: 16px; font-weight: bold;">Booking Info</h2>
+                    <ul style="padding-left: 20px; margin: 0;">
+                      <li style="margin-bottom: 5px;">Booking ID#:<strong> {{booking_id}}</strong></li>
+                      <li style="margin-bottom: 5px;">Session:<strong> {{service_name}}</strong></li>
+                      <li style="margin-bottom: 5px;">Date, Time:<strong> {{booking_date}}, - {{start_time}} - {{end_time}}</strong></li>
+                      <li style="margin-bottom: 5px;">Status:<strong> {{status}}</strong></li>
+                      <li style="margin-bottom: 5px;">Payment Status:<strong> {{payment_status}}</strong></li>
+                      <li style="margin-bottom: 5px;">Payment Method:<strong> {{payment_method}}</strong></li>
+                      <li style="margin-bottom: 5px;">Payment Amount:<strong> {{payment_amount}}</strong></li>
+                      <li style="margin-bottom: 5px;">Payment portion:<strong> {{payment_portion}}</strong></li>
+                      <li style="margin-bottom: 5px;">Total Price:<strong> {{total_price}}</strong></li>
+
+                    </ul>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div style="margin-top: 25px;">
+                    <a href="{{ manage_booking_url }}" style="text-decoration: none; padding: 10px; border-radius: 6px; text-align: center; font-size: 18px; color: #ffffff; background-color: #2652e4; font-weight: bold;">Manage this booking</a>
+                </div>
+            </td>
+        </tr>
+    </table>
+{% endblock %}

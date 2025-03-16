@@ -1,0 +1,50 @@
+{% extends "base/base.html" %}
+{% block content %}
+    <table cellpadding="0" cellspacing="0" border="0" class="et-table-main-body">
+        <tr>
+            <td>
+                <h2 style="margin-bottom: 30px; font-weight: 500; font-size: 30px; line-height: 41px; text-align: center; ">
+                    Update your email Address</h2>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p style="margin-bottom: 10px; font-size: 16px; line-height: 24px;">
+                    Hello {{ recipient_name }},
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p style="margin-bottom: 40px; font-weight: 400; font-size: 15px; line-height: 22px;">
+                    You recently requested to update the email address associated with your account.
+                    To complete this update, please click on the button below to verify your new email address.</p>
+                <a style="margin: auto;" class="btn btn-primary" href="{{ url }}">Verify Now</a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p style="margin-top: 20px; margin-bottom: 20px; padding-bottom: 40px; border-bottom: 1px solid #E8EDF3;">
+                    If you want to update your email address please click on the verify button otherwise your email won't be updated.
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p style="margin-bottom: 40px; font-size: 14px; line-height: 19px;">
+                    If you’re having trouble clicking “Verify Now” button, copy and paste the URL below into your web
+                    browser: <a href="{{ url }}">{{ url }}</a>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p style="margin-bottom: 0; font-size: 12px; line-height: 16px;">
+                    Kind Regards,
+                </p>
+                <p>Support Team | <a href="https://insuranceschooloftexas.com/">insuranceschooloftexas.com</a></p>
+            </td>
+        </tr>
+    </table>
+{% endblock %}
+
