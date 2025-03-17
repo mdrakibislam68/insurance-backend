@@ -36,7 +36,7 @@ ALLOWED_HOSTS = ['*']
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
-CSRF_TRUSTED_ORIGINS = ['http://localhost:3000', ]
+CSRF_TRUSTED_ORIGINS = ['http://localhost:3000', 'http://s4kkwwc80co0o4ccwg0wokow.89.116.191.92.sslip.io']
 ENVIRONMENT = env('ENVIRONMENT', default='')
 
 # Application definition
