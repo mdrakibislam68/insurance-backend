@@ -43,7 +43,7 @@ services:
       - ./flower-static:/usr/local/lib/python3.x/site-packages/flower/static
     command: [ 'flower', '--broker=redis://redis:6379', '--port=5555', '--url_prefix=/flower' ]
     ports:
-      - 5557:5555
+      - 5558:5555
     depends_on:
       - redis
 
