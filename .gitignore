@@ -1,7 +1,6 @@
 # Environments
 .env
 dev.env
-prod.env
 dev.microapp.env
 .vscode
 .venv
