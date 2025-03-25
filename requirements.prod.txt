@@ -25,5 +25,5 @@ mailchimp-marketing==3.0.80
 django-ses==4.2.0
 flower==2.0.1
 sentry-sdk[django]==2.20.0
-deepdiff==8.2.0
 daphne==4.1.2
+deepdiff==8.2.0
